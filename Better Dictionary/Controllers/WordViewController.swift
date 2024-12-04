@@ -35,7 +35,7 @@ class WordViewController: UIViewController {
             return
         }
         
-        dictionaryManager.defineWord(word: wordInputText.text!)
+        dictionaryManager.defineWord(word: word)
         
     }
     
@@ -61,10 +61,7 @@ extension WordViewController: DictionaryManagerDelegate {
             self.wordMeaning = dictionary.meaning
             self.partSpeech = dictionary.partOfSpeech
             
-            print(self.definedWord)
-            
             self.performSegue(withIdentifier: "goToDefinition", sender: self)
-            print(self.definedWord)
             self.wordInputText.text = ""
         }
     }
